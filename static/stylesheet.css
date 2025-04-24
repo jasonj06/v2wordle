@@ -1,0 +1,9 @@
+body {
+    background-color: gainsboro;
+}
+
+#random_word {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+}
