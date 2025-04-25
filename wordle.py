@@ -1,9 +1,6 @@
 import random
 from words import word_list
 
-random_word = word_list[random.randint(0,len(word_list))]
-print(random_word)
-
 def feedback(word, guess):
     feedback = ""
     for i in range(len(word)):
@@ -16,10 +13,14 @@ def feedback(word, guess):
             
     return feedback
 
-guess = input("Guess a word: ")
-while guess != random_word:
-    print(feedback(random_word, guess))
-    guess = input("Wrong, try again: ")
-    
+if __name__ == "__main__":
 
-print(f"{guess} is correct")
+    random_word = word_list[random.randint(0,len(word_list))]
+    print(random_word)
+
+    guess = input("Guess a word: ")
+    while guess != random_word:
+        print(feedback(random_word, guess))
+        guess = input("Wrong, try again: ")
+
+    print(f"{guess} is correct")

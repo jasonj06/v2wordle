@@ -1,23 +1,15 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Wordle clone</title>
-        <link rel="stylesheet" href="static/stylesheet.css">
-    </head>
+{% extends "layout.html" %}
+{% block body %}
 
-    <body>
-        
-        <div>
-            <p id="random_word">random word: {{random_word}}</p>
-        </div>
+    <div>
+        <p id="random_word">random word: {{random_word}}</p>
+    </div>
 
-        <div class="center">
-            <form>
-                <input type="text" id="guess">
-                <input type="submit" value="Guess">
-            </form>
-        </div>
+    <div class="center">
+        <form method="post">
+            <input type="text" name="guess" id="guess">
+            <input type="submit" value="Guess">
+        </form>
+    </div>
 
-    </body>
-</html>
+{% endblock %}

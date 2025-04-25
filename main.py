@@ -1,13 +1,20 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, flash, session
 import random
 from words import word_list
+from wordle import feedback
 
 app = Flask(__name__)
+app.secret_key = '1234'
 
-@app.route("/")
+random_word = random.choice(word_list)
+
+@app.route("/", methods=['GET', 'POST'])
 def index():
-    # random_words = [random.choice(word_list) for _ in range(5)]
-    random_word = random.choice(word_list)
+
+    if request.method == "POST":
+        guess = request.form['guess']
+        a = feedback(random_word, guess)
+        flash(a)
 
     return render_template('index.html', random_word=random_word)
 
