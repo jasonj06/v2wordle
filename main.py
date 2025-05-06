@@ -15,9 +15,13 @@ def index():
     #prev_guess = [""]
     if request.method == "POST":
         guess = request.form['guess']
-        prev_guess.append(guess)
         a = feedback(random_word, guess)
-        flash(a)
+        prev_guess.append(f"{guess} | {a}")
+        if a.isupper() and not "_" in a:
+            flash(f"Correct!\n{a}")
+        else:
+            flash(a)
+
 
     return render_template('index.html', random_word=random_word, prev_guess=prev_guess)
 
