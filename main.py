@@ -23,7 +23,7 @@ def index():
             flash(a)
 
 
-    return render_template('index.html', random_word=random_word, prev_guess=prev_guess)
+    return render_template('index.html', random_word=random_word, prev_guess=prev_guess[::-1])
 
 if __name__ == "__main__":
     app.run("0.0.0.0", debug=True)

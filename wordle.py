@@ -26,7 +26,7 @@ def feedback(word, guess):
     return "".join(result)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
 
     random_word = word_list[random.randint(0,len(word_list))]
     #print(random_word)
